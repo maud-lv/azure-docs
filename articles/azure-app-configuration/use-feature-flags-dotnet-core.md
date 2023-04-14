@@ -26,7 +26,7 @@ The Feature Management libraries also manage feature flag lifecycles behind the 
 
 The [Add feature flags to an ASP.NET Core app Quickstart](./quickstart-feature-flag-aspnet-core.md) shows a simple example of how to use feature flags in an ASP.NET Core application. This tutorial shows additional setup options and capabilities of the Feature Management libraries. You can use the sample app created in the quickstart to try out the sample code shown in this tutorial. 
 
-For the ASP.NET Core feature management API reference documentation, see [Microsoft.FeatureManagement Namespace](https://www.nuget.org/packages/Microsoft.FeatureManagement/).
+For the ASP.NET Core feature management API reference documentation, see [Microsoft.FeatureManagement Namespace](/dotnet/api/microsoft.featuremanagement).
 
 In this tutorial, you will learn how to:
 
@@ -40,7 +40,7 @@ To access the .NET Core feature manager, your app must have references to the `M
 
 The .NET Core feature manager is configured from the framework's native configuration system. As a result, you can define your application's feature flag settings by using any configuration source that .NET Core supports, including the local *appsettings.json* file or environment variables.
 
-By default, the feature manager retrieves feature flag configuration from the `"FeatureManagement"` section of the .NET Core configuration data. To use the default configuration location, call the AddFeatureManagement method of the **IServiceCollection** passed into the **ConfigureServices** method of the **Startup** class.
+By default, the feature manager retrieves feature flag configuration from the `"FeatureManagement"` section of the .NET Core configuration data. To use the default configuration location, call the [AddFeatureManagement](/dotnet/api/microsoft.featuremanagement.servicecollectionextensions.addfeaturemanagement) method of the **IServiceCollection** passed into the **ConfigureServices** method of the **Startup** class.
 
 
 ```csharp
@@ -217,7 +217,7 @@ By convention, the `FeatureManagement` section of this JSON document is used for
 
 ## Use dependency injection to access IFeatureManager 
 
-For some operations, such as manually checking feature flag values, you need to get an instance of IFeatureManager. In ASP.NET Core MVC, you can access the feature manager `IFeatureManager` through dependency injection. In the following example, an argument of type `IFeatureManager` is added to the signature of the constructor for a controller. The runtime automatically resolves the reference and provides an of the interface when calling the constructor. If you're using an application template in which the controller already has one or more dependency injection arguments in the constructor, such as `ILogger`, you can just add `IFeatureManager` as an additional argument:
+For some operations, such as manually checking feature flag values, you need to get an instance of [IFeatureManager](/dotnet/api/microsoft.featuremanagement.ifeaturemanager). In ASP.NET Core MVC, you can access the feature manager `IFeatureManager` through dependency injection. In the following example, an argument of type `IFeatureManager` is added to the signature of the constructor for a controller. The runtime automatically resolves the reference and provides an of the interface when calling the constructor. If you're using an application template in which the controller already has one or more dependency injection arguments in the constructor, such as `ILogger`, you can just add `IFeatureManager` as an additional argument:
 
 ### [.NET 5.x](#tab/core5x)
     
